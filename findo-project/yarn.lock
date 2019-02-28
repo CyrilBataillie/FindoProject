@@ -6748,6 +6748,11 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
+vue-touchfeedback@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/vue-touchfeedback/-/vue-touchfeedback-2.0.0.tgz#51731e6fda15bc6dc5a925441f7c4ab2bdf0d403"
+  integrity sha1-UXMeb9oVvG3FqSVEH3xKsr3w1AM=
+
 vue@^2.5.22:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.7.tgz#254f188e7621d2d19ee28d0c0442c6d21b53ae2d"
