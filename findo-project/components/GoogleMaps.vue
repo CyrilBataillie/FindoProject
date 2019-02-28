@@ -17,7 +17,39 @@ export default {
             this.map = new google.maps.Map(document.getElementById('myMap'), {
             center: {lat:48.855115, lng: 2.346535},
             scrollwheel: false,
-            zoom: 4
+            zoom: 15,
+            overviewMapControl: false,
+            fullscreenControl: false,
+            streetViewControl: false,
+            mapTypeControl: false,
+            styles: [
+              {
+                elementType : 'geometry',
+                stylers:[
+                  {color: '#dadfe1'}
+                ]
+              },
+              {
+                elementType : 'geometry',
+                featureType: 'road',
+                stylers:[
+                  {color: '#ffffff'}
+                ]
+              },
+              {
+                elementType : 'geometry',
+                featureType: 'water',
+                stylers: [
+                  {color: '#94d8ff'}
+                ]
+              },
+              {
+                featureType : 'poi',
+                stylers: [
+                  { visibility: 'off'}
+                ]
+              }
+            ]
             })
   }
 
