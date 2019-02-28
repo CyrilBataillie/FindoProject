@@ -1,7 +1,7 @@
 <template>
     <div class="layout">
         <div class="layout-header">Findo</div>
-        <div class="layout-menu">Menu content...</div>
+        <div class="layout-menu" v-show="menuOpened">Menu content...</div>
         <div class="layout-content">
             <nuxt/>
         </div>
