@@ -1,7 +1,7 @@
 <template>
     <div class="navigation">
         <h3>MENU</h3>
-        <div class="menu-items">
+        <div class="menu-items" @click="closeMenu">
             <nuxt-link v-for="item, i in items" :key="i" :to="item.to" class="menu-item">
                 {{ item.label }}
             </nuxt-link>
@@ -25,7 +25,12 @@
                     },
                 ]
             }
-        }
+        },
+        methods: {
+        ...mapMutations({
+            closeMenu: 'ui/closeMenu',
+        })
+    },
     }
 </script>
 

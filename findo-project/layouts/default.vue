@@ -4,12 +4,14 @@
   <div class="layout">
     <div class="layout-header">
       <div class="layout-header-menu-handle" @click="toggleMenu">
-        <icon v-if="menuOpened" name="times" />
+        <icon v-if="$store.state.ui.menu" name="times" />
         <icon v-else name="bars" />
       </div>
     </div>
     <transition name="slide-left">
-      <div class="layout-menu" v-show="menuOpened"><navigation/></div>
+      <div class="layout-menu" v-show="$store.state.ui.menu">
+        <navigation/>
+      </div>
     </transition>
     <div class="layout-content">
       <nuxt/>
@@ -19,6 +21,9 @@
 
 <script>
   import Navigation from '@/components/Navigation'
+  import {
+    mapMutations
+  } from 'vuex'
   
   export default {
     data() {
@@ -27,12 +32,12 @@
       }
     },
     methods: {
-      toggleMenu() {
-        this.menuOpened = !this.menuOpened
-      }
+      ...mapMutations({
+        toggleMenu: 'ui/toggleMenu',
+      })
     },
     components: {
-        'navigation': Navigation,
+      'navigation': Navigation,
     },
   }
 </script>
@@ -76,6 +81,5 @@
     line-height: 64px;
     text-align: center;
   }
-
 </style>
 
