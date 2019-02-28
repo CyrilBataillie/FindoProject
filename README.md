@@ -17,8 +17,8 @@ Icons used :
 
 Colors used : 
 -------------------------------------
-- Fountain : 93D7FF
-- Shower : 175CCC
-- Toilets : 1A2999
-- Lockers : FF7743
-- Background : FAFAFA
+- Fountain : #93D7FF
+- Shower : #175CCC
+- Toilets : #1A2999
+- Lockers : #FF7743
+- Background : #FAFAFA
