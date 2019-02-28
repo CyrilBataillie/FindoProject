@@ -7,6 +7,7 @@
 </template>
 
 <script>
+  import icon2 from '../static/markerDouche.png'
 export default {
   name: 'hello',
   data () {
@@ -50,7 +51,14 @@ export default {
                 ]
               }
             ]
-            })
+          }),
+          this.marker = new google.maps.Marker({
+            position: {lat:48.851807,  lng: 2.341797},
+            map : this.map,
+            title :'Douche ST GERMAIN',
+            icon: icon2
+          })
+        
   }
 
 }
