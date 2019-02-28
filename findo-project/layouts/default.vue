@@ -3,7 +3,7 @@
 <template>
   <div class="layout">
     <div class="layout-header">
-      <div class="layout-header-menu-handle" @click="toggleMenu">
+      <div class="layout-header-menu-handle" @click="toggleMenu" style = "font-size: 30px; color: #363636; margin-top: 10px;">
         <icon v-if="$store.state.ui.menu" name="times" />
         <icon v-else name="bars" />
       </div>
@@ -24,7 +24,7 @@
   import {
     mapMutations
   } from 'vuex'
-  
+
   export default {
     data() {
       return {
@@ -52,7 +52,7 @@
     left: 0;
     height: 64px;
   }
-  
+
   .layout-content {
     background-color: #F7F7F7;
     position: fixed;
@@ -61,11 +61,11 @@
     left: 0;
     top: 64px;
   }
-  
+
   .layout-content>section {
     padding: 20px;
   }
-  
+
   .layout-menu {
     background-color: #FFF;
     z-index: 2;
@@ -75,7 +75,7 @@
     left: 0;
     top: 0;
   }
-  
+
   .layout-header {
     z-index: 99;
     background-color: rgba(0, 0, 0, 0);
@@ -89,4 +89,3 @@
     text-align: center;
   }
 </style>
-

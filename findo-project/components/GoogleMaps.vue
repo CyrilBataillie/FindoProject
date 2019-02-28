@@ -1,13 +1,13 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-
     <div id="myMap"></div>
-  </div>
 </template>
 
 <script>
-  import icon2 from '../static/markerDouche.png'
+import iconDouche from '../static/markerDouche.png'
+import iconEau from '../static/markerFontaine.png'
+import iconLocker from '../static/markerLocker.png'
+import iconToilettes from '../static/markerToilettes.png'
+
 export default {
   name: 'hello',
   data () {
@@ -23,6 +23,7 @@ export default {
             fullscreenControl: false,
             streetViewControl: false,
             mapTypeControl: false,
+            zoomControl: false,
             styles: [
               {
                 elementType : 'geometry',
@@ -56,9 +57,26 @@ export default {
             position: {lat:48.851807,  lng: 2.341797},
             map : this.map,
             title :'Douche ST GERMAIN',
-            icon: icon2
+            icon: iconDouche
+          }),
+          this.marker1 = new google.maps.Marker({
+            position: {lat:48.854793,  lng: 2.345384},
+            map : this.map,
+            title :'Casier CITE',
+            icon: iconLocker
+          }),
+          this.marker2 = new google.maps.Marker({
+            position: {lat:48.85759,  lng: 2.351451},
+            map : this.map,
+            title :'Toilettes HOTEL DE VILLE',
+            icon: iconToilettes
+          }),
+          this.marker2 = new google.maps.Marker({
+            position: {lat:48.863164,  lng: 2.343452},
+            map : this.map,
+            title :'fontaine LES HALLES',
+            icon: iconEau
           })
-        
   }
 
 }
