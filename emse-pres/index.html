@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Workshop</title>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article class="deck">
+      <section>
+        <h2>Qualité graphique <br> des applications numériques</h2>
+        <h4>Workshop - 1<sup>er</sup> mars 2019</h4>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <ul>
+          <li><strong><small>Adrien Auroux - Digital Artisan</small></strong>
+<br>
+<small>adrien-auroux.com - digital-artisan.fr - adrien.auroux@gmail.com</small>
+            <!--li <a href="mailto:adrien.auroux@gmail.com" target="_blank">adrien.auroux@gmail.com</a>-->
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>Preparation</h1>
+      </section>
+      <section>
+        <h2>Prerequisites</h2>
+        <ul>
+          <li><a href="https://nodejs.org/en" target="_blank">Node.js</a> and npm
+            <pre><code class="language-shell">$ node -v          // 8.14.0
+$ npm -v           // 6.4.1</code></pre>
+          </li>
+          <li><a href="https://yarnpkg.com/lang/en/docs/install/#windows-stable" target="_blank">Yarn</a>
+            <pre><code class="language-shell">$ yarn -v          // 1.12.3
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Installation</h2>
+        <ul>
+          <li>Framework and folder structure
+            <pre><code class="language-shell">$ yarn create nuxt-app my-awesome-project</code></pre>
+          </li>
+          <li>Start in dev mode
+            <pre><code class="language-shell">$ cd my-awesome-project
+$ yarn dev</code></pre>
+          </li>
+          <li>Go to <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Cleanup</h2>
+        <ul>
+          <li>Remove unused css in <code>/layouts/default.vue</code></li>
+          <li>Remove <code>/components/Logo.vue</code> file</li>
+          <li>Remove unnecessary code in <code>/pages/index.vue</code>
+            <script class="lang-markup" type="text/plain">
+              <template>
+                  <section>
+                      <h1>Hello World</h1>
+                  </section>
+              </template>
+              
+            </script>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Organize CSS</h2>
+        <ul>
+          <li>Move css from <code>/layouts/default.vue</code> to <code>/assets/css/app.css</code></li>
+          <li>Create an empty css file under <code>/assets/css/transitions.css</code></li>
+          <li>Load these css files in <code>/nuxt.config.js</code>
+            <pre><code class="language-javascript">css: [
+    ...
+    '@/assets/css/app.css',
+    '@/assets/css/transitions.css',
+],
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Use external resources</h2>
+        <ul>
+          <li>Load <a href="https://fontawesome.com/start" target="_blank">Fontawesome</a> in <code>/nuxt.config.js</code>
+            <pre><code class="language-javascript">head: {
+    ...
+    link: [
+        ...
+        {
+            rel: 'stylesheet',
+            type: 'text/css',
+            href: 'https://use.fontawesome.com/releases/v5.7.2/css/all.css',
+        },
+    ],
+},
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>App structure</h1>
+      </section>
+      <section>
+        <h2>Some rules and considerations</h2>
+        <ul>
+          <li>Each <code>Vue</code> file is independent</li>
+          <li>We will use semantic css with prefixes</li>
+          <li>Layout items will have a fixed position</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Layout Structure</h2>
+        <!--h3 Template Part-->
+        <ul>
+          <li>Wrap the <code>&lt;nuxt/&gt;</code> tag in <code>/layouts/default.vue</code>
+            <script class="lang-markup" type="text/plain">
+              <template>
+                  <div class="layout">
+                      <div class="layout-header">App Name</div>
+                      <div class="layout-menu">Menu content...</div>
+                      <div class="layout-content">
+                          <nuxt/>
+                      </div>
+                  </div>
+              </template>
+              
+            </script>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Layout Structure</h2>
+        <!--h3 Style Part-->
+        <ul>
+          <li>Create a <code>&lt;style&gt;&lt;/style&gt;</code> tag below <code>&lt;/template&gt;</code>
+            <pre><code class="language-css">.layout-header {
+    background-color: #DDD;
+    position: fixed; right: 0; top: 0; left: 0; height: 64px;
+}
+.layout-content {
+    background-color: #F7F7F7;
+    position: fixed; right: 0; bottom: 0; left: 0; top: 64px;
+}
+.layout-content > section { padding: 20px; }
+.layout-menu {
+    background-color: #FFF; z-index: 10;
+    position: fixed; right: 0; bottom: 0; left: 0; top: 64px;
+ }
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Layout Structure</h2>
+        <!--h3 Script Part-->
+        <ul>
+          <li>Create a <code>&lt;script&gt;&lt;/script&gt;</code> tag below <code>&lt;/template&gt;</code>
+            <pre><code class="language-javascript">export default {
+    data() {
+        return {
+            menuOpened: false,
+        }
+    }
+}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>First directive</h2>
+        <ul>
+          <li>See <a href="https://vuejs.org/v2/guide/syntax.html#Directives" target="_blank">Directive</a> for more information
+            <script class="lang-markup" type="text/plain"><div class="layout-menu" v-show="menuOpened">Menu content...</div></script>
+            <p>Note that <code>menuOpened</code> is a reactive variable</p>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>Components</h1>
+      </section>
+      <section>
+        <h2>Icon Component</h2>
+        <ul>
+          <li>Create <code>/components/Icon.vue</code> file</li>
+          <li>Template
+            <script class="lang-markup" type="text/plain"><i :class="'fas fa-' + name"></i></script>
+          </li>
+          <li>Script
+            <pre><code class="language-javascript">export default {
+    props: { name: String }
+}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Register Global Component</h2>
+        <ul>
+          <li>Create <code>/plugins/components.js</code> file
+            <pre><code class="language-javascript">import Vue from 'vue'
+
+Vue.component('icon', require('@/components/Icon').default)</code></pre>
+          </li>
+          <li>Load this file in <code>/nuxt.config.js</code>
+            <pre><code class="language-javascript">plugins: [
+    ...
+    '@/plugins/components',
+],
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>First Method</h2>
+        <ul>
+          <li>Template
+            <script class="lang-markup" type="text/plain">
+              <div class="layout-header-menu-handle" @click="toggleMenu">
+                  <icon name="bars"/>
+              </div>
+            </script>
+          </li>
+          <li>Script
+            <pre><code class="language-javascript">methods: {
+    toggleMenu() {
+        this.menuOpened = !this.menuOpened
+    }
+}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Some Header Styles</h2>
+        <ul>
+          <li>
+            <pre><code class="language-css">.layout-header-menu-handle {
+    width:       64px;
+    height:      64px;
+    line-height: 64px;
+    text-align:  center;
+}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>Transitions</h1>
+      </section>
+      <section>
+        <h2>Menu Transition</h2>
+        <ul>
+          <li>Wrap the element with <code>&lt;transition&gt;&lt;/transition&gt;</code> tag
+            <script class="lang-markup" type="text/plain">
+              <transition name="slide-left">
+                  <div class="layout-menu" v-show="menuOpened">Menu content...</div>
+              </transition>
+            </script>
+          </li>
+          <li>Add css in <code>/assets/css/transitions.css</code>
+            <pre><code class="language-css">.slide-left-enter-active, .slide-left-leave-active {
+    transform:  translateX(0%);
+    transition: transform 300ms;
+}
+.slide-left-enter, .slide-left-leave-to { transform: translateX(-100%); }
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Another directive: v-if</h2>
+        <ul>
+          <li>Replace
+            <script class="lang-markup" type="text/plain"><icon name="bars"/></script>
+          </li>
+          <li>By these 2 lines:
+            <script class="lang-markup" type="text/plain">
+              <icon v-if="menuOpened" name="times"/>
+              <icon v-else name="bars"/>
+              
+            </script>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>Navigation</h1>
+      </section>
+      <section>
+        <h2>Create some pages</h2>
+        <ul>
+          <li>Create some <code>vue</code> files under <code>/pages</code> folder</li>
+          <li>Like <code>/pages/profile.vue</code>
+            <script class="lang-markup" type="text/plain">
+              <template>
+                  <section>
+                      <h1>Profile</h1>
+                      <p>Profile content</p>
+                  </section>
+              </template>
+              
+            </script>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>The <code>vue-router</code> tag</h2>
+        <ul>
+          <li>To navigate between pages, we'll use the <code>&lt;nuxt-link&gt;</code> component
+            <script class="lang-markup" type="text/plain"><nuxt-link :to="{ name: 'example' }">Example</nuxt-link></script>
+          </li>
+          <li>This link will load <code>/pages/example.vue</code> in place of the <code>&lt;nuxt/&gt;</code> tag</li>
+          <li>See <a href="https://nuxtjs.org/guide/routing/" target="_blank">Routing</a> for more information</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Navigation Component</h2>
+        <h3>Template Part</h3>
+        <ul>
+          <li>
+            <script class="lang-markup" type="text/plain">
+              <div class="menu-items">
+                  <nuxt-link v-for="item, i in items" :key="i" :to="item.to" class="menu-item">
+                      {{ item.label }}
+                  </nuxt-link>
+              </div>
+              
+            </script>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Navigation Component</h2>
+        <h3>Script Part</h3>
+        <ul>
+          <li>
+            <pre><code class="language-javascript">export default {
+    data() {
+        return {
+            items: [
+                { to: '/', label: 'Dashboard' },
+                { to: { name: 'profile' }, label: 'Profile' },
+                ...
+            ]
+        }
+    }
+}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Navigation Component</h2>
+        <h3>Style Part</h3>
+        <ul>
+          <li>
+            <pre><code class="language-css">.menu-items { padding: 20px; }
+
+.menu-item {
+    display:       block;
+    margin-bottom: 20px;
+}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Register Local Component</h2>
+        <ul>
+          <li>Import the component directly in <code>/layouts/default.vue</code>
+            <pre><code class="language-javascript">import Navigation from '@/components/Navigation'
+
+export default {
+    components: {
+        'navigation': Navigation,
+        ...
+    },
+    ...
+}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>Global State</h1>
+      </section>
+      <section>
+        <h2>Store File</h2>
+        <ul>
+          <li>These files are located under <code>/store</code> folder</li>
+          <li>Each file has 4 parts
+            <pre><code class="language-javascript">export const state = () => ({})
+
+export const getters = {}
+
+export const mutations = {}
+
+export const actions = {}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>UI Store</h2>
+        <h3>Content</h3>
+        <ul>
+          <li>Create file under <code>/store/ui.js</code>
+            <pre><code class="language-javascript">export const state = () => ({
+    menu: false,
+})
+
+export const mutations = {
+  toggleMenu(state) { state.menu = !state.menu },
+  openMenu(state) { state.menu = true },
+  closeMenu(state) { state.menu = false },
+}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>UI Store</h2>
+        <h3>State usage</h3>
+        <ul>
+          <li>Replace <code>menuOpened</code> by <code>$store.state.ui.menu</code>
+            <script class="lang-markup" type="text/plain">
+              <icon v-if="$store.state.ui.menu" name="times"/>
+              <icon v-else name="bars"/>
+              ...
+              <div class="layout-menu" v-show="$store.state.ui.menu">
+                  <navigation/>
+              </div>
+              
+            </script>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>UI Store</h2>
+        <h3>Mutations usage</h3>
+        <ul>
+          <li>Import the <code>mapMutations</code> method
+            <pre><code class="language-javascript">import { mapMutations } from 'vuex'
+
+export default {
+    methods: {
+        ...mapMutations({
+            toggleMenu: 'ui/toggleMenu',
+        })
+    },
+}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>UI Store</h2>
+        <h3>Update Navigation component</h3>
+        <ul>
+          <li>Bind event to menu items wrapper
+            <script class="lang-markup" type="text/plain"><div class="menu-items" @click="closeMenu"></script>
+          </li>
+          <li>Map the mutation
+            <pre><code class="language-javascript">export default {
+    methods: {
+        ...mapMutations({
+            closeMenu: 'ui/closeMenu',
+        })
+    },
+}
+
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>Middleware</h1>
+      </section>
+      <section>
+        <h2>Delay all requests</h2>
+        <ul>
+          <li>Create file under <code>/middleware/delay.js</code> method
+            <pre><code class="language-javascript">export default ({ isServer }) => {
+    if ( isServer ) return // Don't use the middleware on server-side
+    return new Promise((resolve) => {
+        setTimeout(resolve, 300) // Add delay
+    })
+}</code></pre>
+          </li>
+          <li>Load it in <code>/nuxt.config.js</code>
+            <pre><code class="language-javascript">router: {
+    middleware: 'delay',
+},
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>Page Transitions</h1>
+      </section>
+      <section>
+        <h2>Default Page Transition</h2>
+        <ul>
+          <li>Add css in <code>/assets/css/transitions.css</code>
+            <pre><code class="language-css">.page-enter-active, .page-leave-active {
+    transform:  translateY(0px);
+    transition: transform 300ms;
+}
+.page-enter, .page-leave-to { transform: translateY(50px); }
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Custom Page Transition</h2>
+        <ul>
+          <li>Add css in <code>/assets/css/transitions.css</code>
+            <pre><code class="language-css">.dashboard-enter-active, .dashboard-leave-active {
+    transform:  scaleX(1) scaleY(1);
+    transition: transform 300ms;
+}
+.dashboard-enter, .dashboard-leave-to { transform: scaleX(.8) scaleY(.8); }</code></pre>
+          </li>
+          <li>Set transition name in <code>/pages/index.vue</code>
+            <pre><code class="language-css">export default {
+    transition: 'dashboard',
+    ...
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>Touch Events</h1>
+      </section>
+      <section>
+        <h2>Register External Plugin</h2>
+        <ul>
+          <li>Run <code>yarn add vue-touchfeedback</code> command</li>
+          <li>Create <code>/plugins/no-ssr.js</code> file
+            <pre><code class="language-javascript">import Vue from 'vue'
+
+Vue.use(require('vue-touchfeedback'))</code></pre>
+          </li>
+          <li>Load this file in <code>/nuxt.config.js</code>
+            <pre><code class="language-javascript">plugins: [
+    { src: '@/plugins/no-ssr', ssr: false },
+    ...
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Plugin Usage</h2>
+        <ul>
+          <li>Add <code>v-touchfeedback</code> directive
+            <script class="lang-markup" type="text/plain">
+              <nuxt-link v-for="item, i in items"
+                  v-touchfeedback :key="i" :to="item.to" class="menu-item">
+                  {{ item.label }}
+              </nuxt-link>
+            </script>
+          </li>
+          <li>Remove Tap Highlight</li>
+          <li>Add css in <code>/assets/css/app.css</code>
+            <pre><code class="language-css">* { -webkit-tap-highlight-color: transparent; }
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>New Navigation Styles</h2>
+        <ul>
+          <li>
+            <pre><code class="language-css">.menu-item {
+    ...
+    font-weight:     bold;
+    text-decoration: none;
+    color:           #000;
+}
+
+.menu-item:hover, .menu-item.is-touch { color: #AEAEAE; }
+
+.menu-item.nuxt-link-exact-active { color: #5B8A56; }
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>Placeholders</h1>
+      </section>
+      <section>
+        <h2>Placeholder Example</h2>
+        <ul>
+          <li>Create <code>/components/Placeholder.vue</code> component file</li>
+          <li>Register component in <code>/plugins/components.js</code>
+            <pre><code class="language-javascript">Vue.component('placeholder', require('@/components/Placeholder').default)
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Placeholder Example</h2>
+        <ul>
+          <li>Template Part
+            <script class="lang-markup" type="text/plain">
+              <div class="placeholder" :style="styles">
+                  <div v-if="icon !== ''" class="placeholder-icon">
+                      <icon :name="icon"/>
+                  </div>
+                  <div v-if="!!$slots.default" class="placeholder-content">
+                      <slot></slot>
+                  </div>
+              </div>
+              
+            </script>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Layout Example</h2>
+        <ul>
+          <li>Style Part
+            <pre><code class="language-css">.placeholder {
+    position: relative; border-radius: 6px;
+    background-color: #DDD; color: #C6C6C6;
+}
+
+* + .placeholder { margin-top: 20px; }
+
+.placeholder-icon {
+    position: absolute; top: 50%; left: 50%;
+    width: 64px; height: 64px; line-height: 64px;
+    margin-top: -32px; margin-left: -32px;
+    font-size: 64px;
+}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Layout Example</h2>
+        <ul>
+          <li>Script Part
+            <pre><code class="language-javascript">export default {
+    props: {
+        icon: { type: String, default: '' },
+        height: { type: [String, Number], default: 256 },
+    },
+    computed: {
+        styles() {
+            return { 'min-height': this.height + 'px' }
+         }
+    }
+}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Create some placeholders</h2>
+        <ul>
+          <li>
+            <script class="lang-markup" type="text/plain"><placeholder icon="columns"/></script>
+            <script class="lang-markup" type="text/plain"><placeholder icon="image"/></script>
+            <script class="lang-markup" type="text/plain">
+              <placeholder icon="cog"/>
+              
+            </script>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>Thanks..</h1>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>
