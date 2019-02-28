@@ -7,3 +7,9 @@ Find the closest water to you :
 - Shower
 - Locker
 - Toilets
+
+
+Google MAPS API
+----------------------------------------
+AIzaSyDyZYfGGtgNagGxPWCo_NXcqEriApXMfYQ
+
