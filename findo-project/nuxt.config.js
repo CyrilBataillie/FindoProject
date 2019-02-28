@@ -16,12 +16,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
-    css: [
-      ...
-      '@/assets/css/app.css',
-      '@/assets/css/transitions.css',
-    ],
+    ]
   },
 
   /*
@@ -33,7 +28,9 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    '@/assets/css/app.css',
+    '@/assets/css/transitions.css',
   ],
 
   /*
