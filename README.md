@@ -10,10 +10,10 @@ Find the closest water to you :
 
 Icons used :
 -------------------------------------
-- Fountain : " <i class="fas fa-tint"></i> "
-- Shower : <i class="fas fa-shower"></i>
-- Toilets : <i class="fas fa-restroom"></i>
-- Lockers : <i class="fas fa-lock"></i>
+- Fountain : class="fas fa-tint"
+- Shower : class="fas fa-shower"
+- Toilets : class="fas fa-restroom"
+- Lockers : class="fas fa-lock"
 
 Colors used : 
 -------------------------------------
