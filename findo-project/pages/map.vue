@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="map">
         <googleMaps/>
     </section>
 </template>
@@ -13,3 +13,13 @@
         },
     }
 </script>
+
+<style>
+.map {
+    position: absolute;
+    top: -64px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+</style>

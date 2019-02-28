@@ -11,12 +11,11 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
     }},
   mounted: function() {
         console.log("map: ", google.maps)
             this.map = new google.maps.Map(document.getElementById('myMap'), {
-            center: {lat:61.180059, lng: -149.822075},
+            center: {lat:48.855115, lng: 2.346535},
             scrollwheel: false,
             zoom: 4
             })
@@ -26,7 +25,11 @@ export default {
 </script>
 <style scoped>
     #myMap {
-    height:300px;
-    width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height:100%;
+      width: 100%;
+      z-index: 0;
    }
 </style>

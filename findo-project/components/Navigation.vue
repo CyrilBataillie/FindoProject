@@ -46,6 +46,8 @@
 <style>
     .navigation {
         padding: 20px;
+        margin-top: 44px;
+        z-index: 2;
     }
     
     .navigation h3 {
@@ -68,6 +70,6 @@
     }
     
     .menu-item.nuxt-link-exact-active {
-        color: #5B8A56;
+        color: #175CCC;
     }
 </style>

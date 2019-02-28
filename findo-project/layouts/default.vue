@@ -68,15 +68,21 @@
   
   .layout-menu {
     background-color: #FFF;
-    z-index: 10;
+    z-index: 2;
     position: fixed;
-    right: 0;
+    right: 70%;
     bottom: 0;
     left: 0;
-    top: 64px;
+    top: 0;
   }
   
+  .layout-header {
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
   .layout-header-menu-handle {
+    z-index: 99;
     width: 64px;
     height: 64px;
     line-height: 64px;
