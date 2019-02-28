@@ -14,6 +14,7 @@ Icons used :
 - Shower : class="fas fa-shower"
 - Toilets : class="fas fa-restroom"
 - Lockers : class="fas fa-lock"
+- Location : class="fas fa-map-marker-alt"
 
 Colors used : 
 -------------------------------------
