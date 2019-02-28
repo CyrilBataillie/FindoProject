@@ -31,3 +31,4 @@ html {
     background-color: #3b8070;
   }
   
+  * { -webkit-tap-highlight-color: transparent; }

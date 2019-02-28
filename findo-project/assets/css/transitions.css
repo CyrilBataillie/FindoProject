@@ -4,3 +4,15 @@
 }
 
 .slide-left-enter, .slide-left-leave-to { transform: translateX(-100%); }
+
+.page-enter-active, .page-leave-active {
+    transform:  translateY(0px);
+    transition: transform 300ms;
+}
+.page-enter, .page-leave-to { transform: translateY(50px); }
+
+.dashboard-enter-active, .dashboard-leave-active {
+    transform:  scaleX(1) scaleY(1);
+    transition: transform 300ms;
+}
+.dashboard-enter, .dashboard-leave-to { transform: scaleX(.8) scaleY(.8); }

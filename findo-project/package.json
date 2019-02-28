@@ -12,8 +12,9 @@
   },
   "dependencies": {
     "cross-env": "^5.2.0",
+    "element-ui": "^2.4.11",
     "nuxt": "^2.4.0",
-    "element-ui": "^2.4.11"
+    "vue-touchfeedback": "^2.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"

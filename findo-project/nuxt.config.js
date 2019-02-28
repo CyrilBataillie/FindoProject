@@ -44,6 +44,7 @@ module.exports = {
   plugins: [
     '@/plugins/element-ui',
     '@/plugins/components',
+    { src: '@/plugins/no-ssr', ssr: false },
   ],
 
   /*
@@ -57,12 +58,17 @@ module.exports = {
   */
   build: {
     transpile: [/^element-ui/],
-    
+
     /*
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+
     }
-  }
+  },
+
+
+  router: {
+    middleware: 'delay',
+  },
 }
