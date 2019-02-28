@@ -11,5 +11,4 @@ Find the closest water to you :
 
 Google MAPS API
 ----------------------------------------
-AIzaSyDyZYfGGtgNagGxPWCo_NXcqEriApXMfYQ
-
+AIzaSyBGQTe_cM7MdCP_1QMlug7dmbPfH3fSMzU

@@ -23,7 +23,7 @@ module.exports = {
       },
     ],
     script: [
-        { src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDyZYfGGtgNagGxPWCo_NXcqEriApXMfYQ' }
+        { src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBGQTe_cM7MdCP_1QMlug7dmbPfH3fSMzU' }
     ],
   },
 
