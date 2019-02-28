@@ -1,3 +1,5 @@
+
+
 <template>
   <div class="layout">
     <div class="layout-header">
@@ -7,13 +9,7 @@
       </div>
     </div>
     <transition name="slide-left">
-      <div class="layout-menu" v-show="menuOpened">
-        <div class="menu-items">
-          <nuxt-link v-for="item, i in items" :key="i" :to="item.to" class="menu-item">
-            {{ item.label }}
-          </nuxt-link>
-        </div>
-      </div>
+      <div class="layout-menu" v-show="menuOpened"><navigation/></div>
     </transition>
     <div class="layout-content">
       <nuxt/>
@@ -22,21 +18,22 @@
 </template>
 
 <script>
+  import Navigation from '@/components/Navigation'
+  
   export default {
     data() {
       return {
         menuOpened: true,
-        items: [
-                { to: '/', label: 'Dashboard' },
-                { to: { name: 'profile' }, label: 'Profile' },
-            ],
       }
     },
     methods: {
       toggleMenu() {
         this.menuOpened = !this.menuOpened
       }
-    }
+    },
+    components: {
+        'navigation': Navigation,
+    },
   }
 </script>
 
@@ -79,5 +76,6 @@
     line-height: 64px;
     text-align: center;
   }
+
 </style>
 
