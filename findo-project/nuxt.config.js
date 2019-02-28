@@ -21,7 +21,10 @@ module.exports = {
         type: 'text/css',
         href: 'https://use.fontawesome.com/releases/v5.7.2/css/all.css',
       },
-    ]
+    ],
+    script: [
+        { src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDyZYfGGtgNagGxPWCo_NXcqEriApXMfYQ' }
+    ],
   },
 
   /*

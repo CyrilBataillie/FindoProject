@@ -26,6 +26,12 @@
                         },
                         label: 'Profile'
                     },
+                    {
+                        to: {
+                            name: 'map'
+                        },
+                        label: 'Map'
+                    },
                 ]
             }
         },
