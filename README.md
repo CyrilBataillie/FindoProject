@@ -22,3 +22,4 @@ Colors used :
 - Toilets : #1A2999
 - Lockers : #FF7743
 - Background : #FAFAFA
+- Favorite : #F5648C
