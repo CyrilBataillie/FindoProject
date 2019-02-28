@@ -1,6 +1,5 @@
 <template>
     <div class="navigation">
-        <h3>MENU</h3>
         <div class="menu-items" @click="closeMenu">
             <nuxt-link v-for="item, i in items" v-touchfeedback :key="i" :to="item.to" class="menu-item">
                 {{ item.label }}
